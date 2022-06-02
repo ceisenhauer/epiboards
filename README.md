@@ -5,5 +5,5 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 <!-- badges: end -->
 
 ## tldr.
-`epiboards` facilitates the rapid construction of Rmd style dashboards and interactive widgets. It is aimed at epidemiologists with the hope of reduce the logistical burden normally associated with making sitreps and interactive / automated reports. 
+`epiboards` facilitates the rapid construction of Rmd style dashboards and interactive widgets. It is aimed at epidemiologists with the hope of reducing the logistical burden normally associated with making sitreps and interactive / automated reports. 
 
