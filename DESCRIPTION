@@ -13,4 +13,13 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports: 
-    magrittr
+    crosstalk,
+    dplyr,
+    htmltools,
+    htmlwidgets,
+    leaflet,
+    magrittr,
+    methods,
+    rlang,
+    tinker,
+    viridis
