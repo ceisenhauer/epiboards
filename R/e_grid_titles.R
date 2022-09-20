@@ -10,6 +10,9 @@
 #'   in `titles` to assign titles along the grid (left to right, top to bottom). So, if you made a
 #'   facet plot using a charcter grouping variable, you will probably need to sort `titles`
 #'   alphabetically for the order to match the grid.
+#' @param links `vector / list` Links to be attached to the grid titles. This list follows the same
+#'   ordering rules as titles. Default is not to add links (NULL).
+#' @param link_target `string` Target to use. Default is 'self'. 
 #' @param top_space `int` How far above the plot the title should be placed. The units of
 #'   `top_space` (percent vs pixels) will be determined automatically to match the units used in 
 #'   the specification of the grid. Default value is 2.
@@ -36,7 +39,7 @@
 #'                      cols = 3,
 #'                      legend_space = 5) %>%
 #'   e_grid_titles(titles = unique(df$group))
-e_grid_titles <- function(e, titles, top_space = 2) { 
+e_grid_titles <- function(e, titles, links = NULL, link_target = 'self', top_space = 2) { 
   grid <- e$x$opts$grid
 
   if (is.null(grid)) {
@@ -64,6 +67,8 @@ e_grid_titles <- function(e, titles, top_space = 2) {
 
     e <- e %>%
            echarts4r::e_title(titles[[i]],
+                              link = links[[i]],
+                              target = link_target,
                               textAlign = 'center',
                               left = paste0(left, '%'),
                               top = paste0(top, '%'))
