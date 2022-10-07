@@ -55,6 +55,8 @@ render_reactable_border <- function(border = NULL) {
 #' @param name `chr` Column name.
 #' @param tooltip `chr` Tooltip to be added to the header text. Default is NULL (no tooltip).
 #' 
+#' @importFrom htmltools div
+#' @importFrom tippy tippy
 #' @export
 render_reactable_header <- function(name, tooltip = NULL) {
   if (is.null(tooltip)) {
