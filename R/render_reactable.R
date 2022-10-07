@@ -64,7 +64,7 @@ render_reactable <- function(df, columns = NULL, column_groups = NULL, digits = 
                                       align = 'left'),
     columns = columns,
     columnGroups = colGroups,
-    elementId = element_id,
+    elementId = elementId,
     ...)
   
   return(out)

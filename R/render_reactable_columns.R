@@ -63,10 +63,9 @@ col_bar <- function(df, col, name = col, tooltip = NULL, color = '#c5c5c5',
 #' @importFrom reactable colDef colFormat
 #' @export
 col_base <- function(name, tooltip = NULL, color = '#000000', digits = 0, percent = FALSE, ...,
-                     min_width = 75, sticky = NULL, border_right = NULL) {
+                     min_width = 75, border_right = NULL) {
 
   out <- reactable::colDef(header = render_reactable_header(name, tooltip),
-                           sticky = sticky,
                            format = reactable::colFormat(digits = digits,
                                                          percent = percent,
                                                          separators = TRUE),
@@ -132,10 +131,11 @@ col_badge <- function(name, tooltip = NULL, colors, ...,
 #' @param name `chr` Display name of the column to be used as the header. Default is `'Spark'`.
 #' @param tooltip `chr` Tooltip text to be added to the header. Default is NULL.
 #' @param color `chr` CSS appropriate string indicating the sparkline bar color.
-#' @param min_width `int` Minimum width for the column.
+#' @param max_width `int` Maximum width for the column.
 #' @param border_right `bool / chr` Right side border to be added. Default is NULL.
 #' @param ... Additional arguments to be passed to [reactable::reactable].
 #' 
+#' @importFrom sparkline sparkline
 #' @export
 col_sparkline <- function(data, name = 'Spark', tooltip = NULL, color = '#c5c5c5', ...,
                           border_right = NULL, max_width = 60) {

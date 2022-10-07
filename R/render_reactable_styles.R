@@ -34,13 +34,14 @@ render_reactable_bar <- function(width, fill = "#e6e6e6", color = '#000000', fon
 #'   or they can pass their own CSS style string. Anything else will result in no border. Default
 #'   is NULL.
 #'
-#' export
+#' @importFrom methods is
+#' @export
 render_reactable_border <- function(border = NULL) {
   out <- if (is.null(border)) {
            return(NULL)
          } else if (border) {
            return("1px solid rgba(0, 0, 0, 0.1)")
-         } else if (is(border, 'character')) {
+         } else if (methods::is(border, 'character')) {
            return(border)
          } else {
            warning('border must be TRUE or a valid style string')
