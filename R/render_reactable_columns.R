@@ -13,6 +13,7 @@
 #' @param percent `bool` Whether to format the column as a percent. Default is FALSE.
 #' @param min_width `int` Minimum width for the column.
 #' @param border_right `bool / chr` Right side border to be added. Default is NULL.
+#' @param ... Additional arguments to be passed to [reactable::reactable].
 #' 
 #' @importFrom reactable colDef colFormat
 #' @importFrom htmlwidgets JS
@@ -57,6 +58,7 @@ col_bar <- function(df, col, name = col, tooltip = NULL, color = '#c5c5c5',
 #' @param percent `bool` Whether to format the column as a percent. Default is FALSE.
 #' @param min_width `int` Minimum width for the column.
 #' @param border_right `bool / chr` Right side border to be added. Default is NULL.
+#' @param ... Additional arguments to be passed to [reactable::reactable].
 #' 
 #' @importFrom reactable colDef colFormat
 #' @export
@@ -88,6 +90,7 @@ col_base <- function(name, tooltip = NULL, color = '#000000', digits = 0, percen
 #'   should be the data values associated with each color.
 #' @param min_width `int` Minimum width for the column.
 #' @param border_right `bool / chr` Right side border to be added. Default is NULL.
+#' @param ... Additional arguments to be passed to [reactable::reactable].
 #' 
 #' @importFrom reactable colDef
 #' @export
@@ -131,6 +134,7 @@ col_badge <- function(name, tooltip = NULL, colors, ...,
 #' @param color `chr` CSS appropriate string indicating the sparkline bar color.
 #' @param min_width `int` Minimum width for the column.
 #' @param border_right `bool / chr` Right side border to be added. Default is NULL.
+#' @param ... Additional arguments to be passed to [reactable::reactable].
 #' 
 #' @export
 col_sparkline <- function(data, name = 'Spark', tooltip = NULL, color = '#c5c5c5', ...,
