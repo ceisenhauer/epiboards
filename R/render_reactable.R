@@ -17,7 +17,9 @@
 #' @param sort_by `chr` Name of column to sort the table by. Default is NULL.
 #' @param sort_order `chr` Whether to sort the `sort_by` column in ascending or descending order.
 #'   Default is `'desc'`.
+#' @param ... Additional arguments to be passed to [reactable::reactable].
 #'
+#' @importFrom reactable colGroup reactable colDef colFormat
 #' @export
 render_reactable <- function(df, columns = NULL, column_groups = NULL, digits = 0,
                              elementId = 'my-select',
@@ -30,8 +32,8 @@ render_reactable <- function(df, columns = NULL, column_groups = NULL, digits = 
     colGroups <- list()
     for (i in 1:length(column_groups)) {
       group_name <- names(column_groups)[[i]]
-      colGroups[[i]] <- colGroup(name = group_name,
-                                 columns = column_groups[[group_name]])
+      colGroups[[i]] <- reactable::colGroup(name = group_name,
+                                            columns = column_groups[[group_name]])
     }
   } else {
     colGroups <- NULL
@@ -46,23 +48,24 @@ render_reactable <- function(df, columns = NULL, column_groups = NULL, digits = 
     sorting <- NULL
   }
 
-  out <- reactable(data = df,
-                   style = list(fontFamily = 'Arial',
-                                fontSize = '12px'),
-                   resizable = TRUE,
-                   highlight = TRUE,
-                   searchable = searchable,
-                   fullWidth = fullWidth,
-                   defaultPageSize = page_size,
-                   defaultSorted = sorting,
-                   defaultColDef = colDef(format = colFormat(digits = digits,
-                                                             separators = TRUE),
-                                          sortNALast = TRUE,
-                                          align = 'left'),
-                   columns = columns,
-                   columnGroups = colGroups,
-                   elementId = element_id,
-                   ...)
+  out <- reactable::reactable(
+    data = df,
+    style = list(fontFamily = 'Arial',
+                 fontSize = '12px'),
+    resizable = TRUE,
+    highlight = TRUE,
+    searchable = searchable,
+    fullWidth = fullWidth,
+    defaultPageSize = page_size,
+    defaultSorted = sorting,
+    defaultColDef = reactable::colDef(format = reactable::colFormat(digits = digits,
+                                                                    separators = TRUE),
+                                      sortNALast = TRUE,
+                                      align = 'left'),
+    columns = columns,
+    columnGroups = colGroups,
+    elementId = element_id,
+    ...)
   
   return(out)
 }
