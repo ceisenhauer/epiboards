@@ -21,6 +21,9 @@ Imports:
     leaflet,
     magrittr,
     methods,
+    reactable,
     rlang,
+    sparkline,
     tinker,
+    tippy,
     viridis
