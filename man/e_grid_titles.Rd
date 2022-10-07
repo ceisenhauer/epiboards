@@ -4,7 +4,14 @@
 \alias{e_grid_titles}
 \title{Titles for Echarts grid}
 \usage{
-e_grid_titles(e, titles, links = NULL, link_target = "self", top_space = 2)
+e_grid_titles(
+  e,
+  titles,
+  font_size = "18px",
+  links = NULL,
+  link_target = "self",
+  top_space = 2
+)
 }
 \arguments{
 \item{e}{\code{echart} Chart to be modified.}
@@ -13,6 +20,8 @@ e_grid_titles(e, titles, links = NULL, link_target = "self", top_space = 2)
 in \code{titles} to assign titles along the grid (left to right, top to bottom). So, if you made a
 facet plot using a charcter grouping variable, you will probably need to sort \code{titles}
 alphabetically for the order to match the grid.}
+
+\item{font_size}{\code{int / chr} Font size to be used. Default is 18px.}
 
 \item{links}{\code{vector / list} Links to be attached to the grid titles. This list follows the same
 ordering rules as titles. Default is not to add links (NULL).}
