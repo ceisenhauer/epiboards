@@ -16,6 +16,18 @@
     <loc>/index.html</loc>
   </url>
   <url>
+    <loc>/reference/col_badge.html</loc>
+  </url>
+  <url>
+    <loc>/reference/col_bar.html</loc>
+  </url>
+  <url>
+    <loc>/reference/col_base.html</loc>
+  </url>
+  <url>
+    <loc>/reference/col_sparkline.html</loc>
+  </url>
+  <url>
     <loc>/reference/e_grid_titles.html</loc>
   </url>
   <url>
@@ -29,5 +41,17 @@
   </url>
   <url>
     <loc>/reference/render_map.html</loc>
+  </url>
+  <url>
+    <loc>/reference/render_reactable.html</loc>
+  </url>
+  <url>
+    <loc>/reference/render_reactable_bar.html</loc>
+  </url>
+  <url>
+    <loc>/reference/render_reactable_border.html</loc>
+  </url>
+  <url>
+    <loc>/reference/render_reactable_header.html</loc>
   </url>
 </urlset>
