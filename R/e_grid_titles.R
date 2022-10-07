@@ -10,6 +10,7 @@
 #'   in `titles` to assign titles along the grid (left to right, top to bottom). So, if you made a
 #'   facet plot using a charcter grouping variable, you will probably need to sort `titles`
 #'   alphabetically for the order to match the grid.
+#' @param font_size `int / chr` Font size to be used. Default is 18px.
 #' @param links `vector / list` Links to be attached to the grid titles. This list follows the same
 #'   ordering rules as titles. Default is not to add links (NULL).
 #' @param link_target `string` Target to use. Default is 'self'. 
@@ -39,7 +40,7 @@
 #'                      cols = 3,
 #'                      legend_space = 5) %>%
 #'   e_grid_titles(titles = unique(df$group))
-e_grid_titles <- function(e, titles, links = NULL, link_target = 'self', top_space = 2) { 
+e_grid_titles <- function(e, titles, font_size = '18px', links = NULL, link_target = 'self', top_space = 2) { 
   grid <- e$x$opts$grid
 
   if (is.null(grid)) {
@@ -70,6 +71,7 @@ e_grid_titles <- function(e, titles, links = NULL, link_target = 'self', top_spa
                               link = links[[i]],
                               target = link_target,
                               textAlign = 'center',
+                              textStyle = list(fontSize = font_size),
                               left = paste0(left, '%'),
                               top = paste0(top, '%'))
   }
